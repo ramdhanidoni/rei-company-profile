@@ -92,13 +92,17 @@ main.h footer.m{display:none}
 .band{position:relative;width:100%;padding:84px 18px;overflow:hidden}
 .band>.in{max-width:1120px;margin:auto;position:relative}
 .band.dk{background:radial-gradient(55% 55% at 72% 42%,rgba(150,85,255,.5),transparent 70%),linear-gradient(180deg,#2d0f5e,#150628);color:#fbf6ff}
+.band.dk.hero-full{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding-top:calc(env(safe-area-inset-top,0px) + 100px);padding-bottom:0;box-sizing:border-box;position:relative}
+.band.dk.hero-full>.in{width:100%;flex:1;display:flex;align-items:center}
+.band.dk.hero-full .mq-hero{margin-top:auto;width:100%;flex-shrink:0;border-bottom:none}
+.mq-hero{background:rgba(15,4,32,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .band.dk::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:46px 46px;-webkit-mask:radial-gradient(70% 80% at 50% 40%,#000,transparent);mask:radial-gradient(70% 80% at 50% 40%,#000,transparent);animation:gr 14s linear infinite}
 @keyframes gr{to{background-position:46px 46px,46px 46px}}
 .band.lt{background:radial-gradient(40vmax 30vmax at 12% 20%,rgba(160,110,255,.22),transparent 70%),radial-gradient(36vmax 28vmax at 90% 80%,rgba(243,207,114,.2),transparent 70%),linear-gradient(180deg,#fbf8ff,#f0e6ff);--ink:#2a0e57;--mut:#65558a;--glass:rgba(255,255,255,.6);--glass2:rgba(255,255,255,.9);--line:rgba(139,75,255,.22);--sh:rgba(90,34,181,.16);color:var(--ink)}
 .lt h1,.lt h2,.lt h3{color:#2a0e57}.lt .gold{background-image:linear-gradient(100deg,#f2b11c,#b8650f,#f2b11c);background-size:240% 100%}
 .lt input,.lt textarea{color:#2a0e57;background:rgba(255,255,255,.7)}
 .lt .tag{color:#4a1d8f}.lt .btn.g{color:#2a0e57}
-.hero2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;min-height:62vh}
+.hero2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;width:100%}
 .pill{display:inline-block;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;color:var(--gold);background:rgba(243,207,114,.12);border:1px solid rgba(243,207,114,.4)}
 .lt .pill{color:#8a5a0a;background:rgba(243,207,114,.35)}
 .fl{animation:fl2 7s ease-in-out infinite alternate}
@@ -121,7 +125,7 @@ small{font-size:.74rem;color:var(--mut)}
 .row2{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid var(--line);font-size:.86rem;margin-bottom:10px}.row2 b{color:var(--gold);text-align:right}
 .st{color:#f2b11c;letter-spacing:2px}
 .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#5a22b5;color:#f3cf72;font-weight:700;font-size:.8rem;flex:none}
-@media(max-width:860px){.hero2{grid-template-columns:1fr}.band{padding:64px 16px}}
+@media(max-width:860px){.hero2{grid-template-columns:1fr}.band{padding:64px 16px}.band.dk.hero-full{padding-top:calc(env(safe-area-inset-top,0px) + 88px);padding-bottom:0;min-height:100vh;min-height:100dvh}}
 
 .crumb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.84rem;color:var(--mut);margin-bottom:34px}
 .back{cursor:pointer;text-decoration:none;padding:9px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.1);color:#fbf6ff;font-weight:500}
@@ -155,7 +159,7 @@ small{font-size:.74rem;color:var(--mut)}
 <main class="h">
 <!-- HOME -->
 <div class="page on" id="home">
-<div class="band dk" style="padding-top:140px"><div class="in hero2">
+<div class="band dk hero-full"><div class="in hero2">
  <div>
   <span class="pill">✦ “INGAT EMAS, INGAT RAJA EMAS”</span>
   <h1 style="margin:18px 0">Solusi Terpercaya Jual-Beli Emas &amp; <span class="gold">Logam Mulia Bertaraf Internasional</span></h1>
@@ -168,8 +172,9 @@ small{font-size:.74rem;color:var(--mut)}
   <div id="why1"></div>
   <p style="font-size:.82rem;margin-top:16px;color:#f0e8ff;letter-spacing:.02em">● Ditimbang Terbuka &amp; Presisi &nbsp;&nbsp;<b style="color:var(--gold);font-weight:700">Pencairan Dana Langsung</b></p>
  </div>
-</div></div>
-<div class="mq"><div class="tk" id="mq"></div></div>
+</div>
+<div class="mq mq-hero"><div class="tk" id="mq"></div></div>
+</div>
 
 <div class="band lt"><div class="in">
  <div class="hd"><span class="pill">Tentang Kami</span><h2>Membangun Standar Baru dalam <span class="gold">Industri Logam Mulia Indonesia</span></h2></div>
