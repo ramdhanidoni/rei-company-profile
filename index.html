@@ -90,7 +90,7 @@ footer{text-align:center;padding:10px 0 30px;font-size:.82rem;color:var(--mut)}
 main.h{padding-top:0;max-width:none;padding-left:0;padding-right:0;padding-bottom:0}
 main.h footer.m{display:none}
 .band{position:relative;width:100%;padding:84px 18px;overflow:hidden}
-.band>.in{max-width:1120px;margin:auto;position:relative}
+.band>.in{max-width:1120px;margin:auto;position:relative}.band.dk.hero-full>.in{max-width:1200px}
 .band.dk{background:radial-gradient(55% 55% at 72% 42%,rgba(150,85,255,.5),transparent 70%),linear-gradient(180deg,#2d0f5e,#150628);color:#fbf6ff}
 .band.dk.hero-full{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding-top:calc(env(safe-area-inset-top,0px) + 100px);padding-bottom:0;box-sizing:border-box;position:relative}
 .band.dk.hero-full>.in{width:100%;flex:1;display:flex;align-items:center}
@@ -102,7 +102,7 @@ main.h footer.m{display:none}
 .lt h1,.lt h2,.lt h3{color:#2a0e57}.lt .gold{background-image:linear-gradient(100deg,#f2b11c,#b8650f,#f2b11c);background-size:240% 100%}
 .lt input,.lt textarea{color:#2a0e57;background:rgba(255,255,255,.7)}
 .lt .tag{color:#4a1d8f}.lt .btn.g{color:#2a0e57}
-.hero2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;width:100%}
+.hero2{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;width:100%}
 .pill{display:inline-block;padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:600;color:var(--gold);background:rgba(243,207,114,.12);border:1px solid rgba(243,207,114,.4)}
 .lt .pill{color:#8a5a0a;background:rgba(243,207,114,.35)}
 .fl{animation:fl2 7s ease-in-out infinite alternate}
@@ -118,14 +118,44 @@ small{font-size:.74rem;color:var(--mut)}
 .sub{display:flex;gap:12px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.55);border:1px solid var(--line);font-size:.84rem;margin-top:10px}
 .sub b{display:block;color:var(--ink)}
 /* High-contrast feature rows inside the dark hero "Mengapa Memilih" card */
+.glass.pad{width:100%;min-width:0;box-sizing:border-box}
 .glass.pad .sub{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.4);box-shadow:0 4px 18px rgba(20,5,45,.18)}
 .glass.pad .sub b{color:#1a0836;font-weight:700;font-size:.92rem;letter-spacing:.01em}
 .glass.pad .sub small{color:#3a2660;font-size:.8rem;line-height:1.45;opacity:1}
 .glass.pad .st{color:#c9972c;font-size:1.05rem}
+.hero2 > *{min-width:0}
 .row2{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid var(--line);font-size:.86rem;margin-bottom:10px}.row2 b{color:var(--gold);text-align:right}
 .st{color:#f2b11c;letter-spacing:2px}
 .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#5a22b5;color:#f3cf72;font-weight:700;font-size:.8rem;flex:none}
-@media(max-width:860px){.hero2{grid-template-columns:1fr}.band{padding:64px 16px}.band.dk.hero-full{padding-top:calc(env(safe-area-inset-top,0px) + 88px);padding-bottom:0;min-height:100vh;min-height:100dvh}}
+@media(max-width:860px){
+.hero2{grid-template-columns:1fr;gap:28px}
+.band{padding:64px 16px}
+.band.dk.hero-full{
+  min-height:auto;
+  min-height:unset;
+  padding-top:calc(env(safe-area-inset-top,0px) + 88px);
+  padding-bottom:0;
+  justify-content:flex-start;
+}
+.band.dk.hero-full>.in{
+  flex:none;
+  display:block;
+  padding-bottom:20px;
+}
+.band.dk.hero-full .mq-hero{margin-top:12px}
+/* Keep the 3 stats in a row on mobile so the card stays compact */
+.glass.pad .g3{grid-template-columns:repeat(3,1fr)!important;gap:8px!important}
+.glass.pad .stat{padding:14px 6px!important}
+.glass.pad .stat b{font-size:1.35rem!important}
+.glass.pad .stat small{font-size:.68rem}
+.glass.pad{padding:22px 16px}
+.glass.pad .sub{padding:12px 12px;margin-top:8px}
+.glass.pad .sub b{font-size:.88rem}
+.glass.pad .sub small{font-size:.76rem}
+.hero2 h1{font-size:clamp(1.9rem,7vw,2.8rem)}
+.hero2 .btns{flex-direction:column;align-items:stretch}
+.hero2 .btns .btn{text-align:center}
+}
 
 .crumb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.84rem;color:var(--mut);margin-bottom:34px}
 .back{cursor:pointer;text-decoration:none;padding:9px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.1);color:#fbf6ff;font-weight:500}
